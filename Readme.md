@@ -1,13 +1,12 @@
 # Spotify-to-YouTube Music Migrator
 
-This Python project facilitates the migration of your Spotify playlists and liked songs to YouTube Music.
+This Python project facilitates the migration of your Spotify playlists to YouTube Music.
 
 **Features**
 
 *   Transfers user playlists.
 *   Searches for matching tracks on YouTube Music
 *   Creates new YouTube Music playlists.
-*   (Optional) Migrates your Spotify "Liked Songs" playlist
 
 **Prerequisites**
 
@@ -19,8 +18,8 @@ This Python project facilitates the migration of your Spotify playlists and like
 
 1.  Clone the repository.
 2.  Install dependencies: `pip install -r requirements.txt`
-3.  Create a `config.py` file (see project structure).
-4.  Obtain API keys from Spotify and Google and insert them into `config.py`.
+3.  Create a `credentials.py` file (see project structure).
+4.  Obtain API keys from Spotify and Google and insert them into `credentials.py`.
 
 **Usage**
 
