@@ -6,7 +6,7 @@ import pickle
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-from ytapi import makePublicService
+from youtube_api import makePublicService
 
 
 def makeService():
