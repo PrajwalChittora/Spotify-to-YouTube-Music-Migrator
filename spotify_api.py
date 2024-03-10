@@ -1,30 +1,50 @@
 import spotipy
-import os
+from credentials import my_client_id, my_client_secret
 
-SPOTIFY_CLIENT_ID = os.environ.get('SPOTIFY_CLIENT_ID')
-SPOTIFY_CLIENT_SECRET = os.environ.get('SPOTIFY_CLIENT_SECRET')
-SPOTIFY_REDIRECT_URI = 'http://localhost:8080'  # Or a suitable redirect URI
+from spotipy.oauth2 import SpotifyClientCredentials
 
-def get_spotify_auth():
-    scope = 'playlist-read-private'  # Or adjust scopes as needed
-    auth = spotipy.oauth2.SpotifyOAuth(
-        SPOTIFY_CLIENT_ID, 
-        SPOTIFY_CLIENT_SECRET, 
-        SPOTIFY_REDIRECT_URI,
-        scope=scope
+#create api
+def connect(cl_id,cl_secret):
+    sp = spotipy.Spotify(
+    auth_manager=SpotifyClientCredentials(
+        client_id=my_client_id, client_secret=my_client_secret
+        )
     )
-    return auth
+    return sp
 
-def get_user_playlists(auth):
-    spotify = spotipy.Spotify(auth_manager=auth)
-    results = spotify.current_user_playlists()
-    return results['items']
+#fetch the playlist
+def fetch_playlist_by_id(api,id):
+    
+    playlist_response = api.playlist(playlist_id=id)
+    name = playlist_response['name']
+    playlist_items = playlist_response['tracks']['items']
+    return playlist_items, name
 
-def get_playlist_tracks(auth, playlist_id):
-    spotify = spotipy.Spotify(auth_manager=auth)
-    results = spotify.playlist_items(playlist_id)
-    tracks = results['items']
-    while results['next']:
-        results = spotify.next(results)
-        tracks.extend(results['items'])
-    return tracks 
+#extract song data from pl
+def extract_data(api, items):
+    data = []
+    for i in items:
+        item = dict.fromkeys(['track_name','artist_name','album_name'])
+        track_name = i['track']['name']
+        artist_name = i['track']['artists'][0]['name']
+        album_name = i['track']['album']['name']
+
+        item['track_name'] = track_name
+        item['artist_name']= artist_name
+        item['album_name']= album_name
+
+        data.append(item)
+        # print(item)
+    return data
+
+#build queries to search on yt 
+def query_builder(pl_data):
+    queries = []
+    for obj in pl_data:
+        q = "{} {} {}".format(obj['track_name'],obj['album_name'],obj['artist_name'])
+        queries.append(q)
+    return queries
+
+
+
+
