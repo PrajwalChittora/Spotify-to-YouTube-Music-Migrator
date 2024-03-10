@@ -11,7 +11,7 @@ This Python project facilitates the migration of your Spotify playlists and like
 
 **Prerequisites**
 
-1.  Python 3.x
+1.  Python 3
 2.  Spotify Developer Account ([https://developer.spotify.com/dashboard/](https://developer.spotify.com/dashboard/))
 3.  Google Cloud Project with YouTube Data API v3 enabled ([https://console.cloud.google.com/](https://console.cloud.google.com/))
 
