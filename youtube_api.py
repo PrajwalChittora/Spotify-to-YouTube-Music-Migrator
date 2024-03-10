@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build
 from credentials import yt_api
 import json
-from spotify_extract import query_builder
+from spotify_api import query_builder
 import time
 
 
