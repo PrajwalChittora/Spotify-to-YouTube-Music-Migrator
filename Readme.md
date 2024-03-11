@@ -28,6 +28,8 @@ This Python project facilitates the migration of your Spotify playlists to YouTu
 Use code with caution.
 The script will guide you through playlist selection and migration.
 ```
+
+
 Disclaimer
 
 Due to API limitations and variances in music catalogs, a perfect 1:1 migration might not always be possible.
@@ -38,3 +40,23 @@ Feel free to improve the matching algorithm, suggest new features, and submit pu
 
 
 **Let me know if you'd like any elaborations or additional features added
+
+
+# Project Gallary
+**Playlist I want to migrate**
+
+![1](https://github.com/PrajwalChittora/Spotify-to-YouTube-Music-Migrator/assets/109464358/960378d0-a45c-4ac7-9126-1fbab070b7aa)
+
+**Reading user playlist via Spotify API**
+
+![2](https://github.com/PrajwalChittora/Spotify-to-YouTube-Music-Migrator/assets/109464358/606263f2-ca5d-42b3-900a-723f753232f5)
+
+**Completing Youtube Oauth 2.0 verification**
+
+2![3](https://github.com/PrajwalChittora/Spotify-to-YouTube-Music-Migrator/assets/109464358/824d3fcf-119b-44c8-b831-5c3463be8f07)
+
+**Target playlist is migrated**
+
+![4](https://github.com/PrajwalChittora/Spotify-to-YouTube-Music-Migrator/assets/109464358/5c7525d1-7889-4015-ba10-be3c75c43227)
+
+
