@@ -31,7 +31,7 @@ The script will guide you through playlist selection and migration.
 Disclaimer
 
 Due to API limitations and variances in music catalogs, a perfect 1:1 migration might not always be possible.
-
+ * For refrence purpose you can also view the project gallary to view how the process looks like.
 Contributing
 
 Feel free to improve the matching algorithm, suggest new features, and submit pull requests!
